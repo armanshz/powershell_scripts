@@ -31,3 +31,8 @@ $Excel.Quit()
 
 # Deletes all ".xlsx" files
 $dir | % {Remove-Item -path $_}
+
+# Moves all files from parent folder and subdirectories into separate folder, and deletes the subdirectories
+
+gci -Recurse -File | move-item -destination "D:\sepfolder"
+gci -recurse -directory | remove-item
